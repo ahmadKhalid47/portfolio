@@ -257,7 +257,7 @@ function Hero() {
           ["02+", "Years shipping production"],
           ["05", "Industries delivered"],
           ["09+", "Platforms architected"],
-          ["03", "Payment gateways integrated"],
+          ["05+", "Payment gateways integrated"],
         ].map(([n, l]) => (
           <div key={l} className="border-r border-border last:border-r-0 py-6 px-4">
             <div className="text-3xl sm:text-4xl font-bold tracking-tighter">{n}</div>
