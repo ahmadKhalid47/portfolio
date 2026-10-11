@@ -6,6 +6,7 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
@@ -34,7 +35,7 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
   useEffect(() => {
@@ -77,27 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Ahmad Raza — Full-Stack Developer / MERN & Next.js" },
-      {
-        name: "description",
-        content:
-          "Ahmad Raza — Full-Stack Developer with 2+ years building production MERN & Next.js platforms across telemedicine, travel, veterinary AI, and EdTech.",
-      },
       { name: "author", content: "Ahmad Raza" },
-      { property: "og:title", content: "Ahmad Raza — Full-Stack Developer / MERN & Next.js" },
-      {
-        property: "og:description",
-        content:
-          "Senior full-stack engineer specializing in Next.js, real-time systems, AI integrations, and secure payments.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Ahmad Raza — Full-Stack Developer / MERN & Next.js" },
-      { name: "description", content: "Full-Stack Developer building modern web applications with MERN, Next.js, and AI features." },
-      { property: "og:description", content: "Full-Stack Developer building modern web applications with MERN, Next.js, and AI features." },
-      { name: "twitter:description", content: "Full-Stack Developer building modern web applications with MERN, Next.js, and AI features." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b500141d-d60d-4e13-8d95-e34e1163c2fd/id-preview-80f388c8--0a590dc0-aecd-4696-b360-8403c208929f.lovable.app-1781638484038.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b500141d-d60d-4e13-8d95-e34e1163c2fd/id-preview-80f388c8--0a590dc0-aecd-4696-b360-8403c208929f.lovable.app-1781638484038.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

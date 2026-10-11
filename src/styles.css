@@ -30,6 +30,7 @@
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-ring-offset-background: var(--background);
+  --color-status: var(--status);
 
   --font-display: "Inter Tight", system-ui, sans-serif;
   --font-sans: "Inter Tight", system-ui, sans-serif;
@@ -67,6 +68,7 @@
   --border: oklch(0 0 0 / 0.12);
   --input: oklch(0 0 0 / 0.12);
   --ring: oklch(0.62 0.19 256);
+  --status: oklch(0.6 0.16 155);
 }
 
 .dark {
@@ -87,6 +89,7 @@
   --border: oklch(1 0 0 / 0.12);
   --input: oklch(1 0 0 / 0.15);
   --ring: oklch(0.7 0.18 256);
+  --status: oklch(0.72 0.16 155);
 }
 
 @layer base {
@@ -104,11 +107,38 @@
     font-family: var(--font-display);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+    line-height: 1.6;
   }
 
   ::selection {
     background-color: var(--accent);
     color: var(--accent-foreground);
+  }
+}
+
+.hero-heading {
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+@media (min-width: 640px) {
+  .hero-heading { font-size: 48px; }
+}
+
+@media (min-width: 1024px) {
+  .hero-heading { font-size: 56px; }
+}
+
+@media (min-width: 1280px) {
+  .hero-heading { font-size: 64px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }
 
